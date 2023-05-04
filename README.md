@@ -15,7 +15,8 @@ You may change any or none of the props as all have a default fallback.
 
 Available Props:
 
-```borderColor1: string
+```
+borderColor1: string
 default: "blue"
 
 borderColor2: string
