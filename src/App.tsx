@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import withAnimatedBorderCard from ".";
+import withAnimatedBorderCard from "./components/withAnimatedBorderCard";
 import "./App.css";
 
 interface Props {
