@@ -1,0 +1,28 @@
+.animated__border {
+    --angle: 0deg;
+    --borderWidth: 1px;
+    --animationDuration: 5s;
+    --borderColor1: blue;
+    --borderColor2: white;
+    --backgroundColor: #111; 
+    background-color: var(--backgroundColor);
+    border: var(--borderWidth) solid;
+    border-image: linear-gradient(var(--angle), var(--borderColor1), var(--borderColor2)) 1;
+    animation: var(--animationDuration) rotate linear infinite;
+}
+
+@keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card {
+    padding: 1rem;
+}
