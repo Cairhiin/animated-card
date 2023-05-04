@@ -2,10 +2,11 @@ import { ReactNode, useEffect } from "react";
 import "./style.css";
 
 /*
-    animationDuration: string formatted with time in seconds followed by an 's' fe: '10s'
-    borderWidth: string formatted with width in pixels followed by 'px' fe: '2px'
+    TODO: 
+      Add box-shadow as a custom property
+      Change it so border radius works and can be set as a custom property
 */
-interface AnimatedCardProps {
+interface AnimatedProps {
   children: ReactNode;
   animationDuration?: string;
   borderColor1?: string;
@@ -16,11 +17,11 @@ interface AnimatedCardProps {
 }
 
 // TypeScript solution: https://medium.com/@jrwebdev/react-higher-order-component-patterns-in-typescript-42278f7590fb
-const withAnimatedBorderCard =
+const withAnimatedBorder =
   <P extends object>(
     WrappedComponent: React.ComponentType<P>
-  ): React.FC<P & AnimatedCardProps> =>
-  ({ children, ...props }: AnimatedCardProps) => {
+  ): React.FC<P & AnimatedProps> =>
+  ({ children, ...props }: AnimatedProps) => {
     const {
       animationDuration,
       borderColor1,
@@ -59,4 +60,4 @@ const withAnimatedBorderCard =
     );
   };
 
-export default withAnimatedBorderCard;
+export default withAnimatedBorder;
