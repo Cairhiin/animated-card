@@ -1,4 +1,4 @@
-# animated-card
+# Animated Border HoC
 A card component with animated border for React
 
 ## Installation instructions
