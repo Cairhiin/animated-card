@@ -12,6 +12,7 @@ interface AnimatedCardProps {
   borderColor2?: string;
   borderWidth?: string;
   backgroundColor?: string;
+  id: string;
 }
 
 // TypeScript solution: https://medium.com/@jrwebdev/react-higher-order-component-patterns-in-typescript-42278f7590fb
@@ -26,10 +27,11 @@ const withAnimatedBorderCard =
       borderColor2,
       borderWidth,
       backgroundColor,
+      id,
     } = props;
 
     useEffect(() => {
-      const animatedCard = document.getElementById("animated-card");
+      const animatedCard = document.getElementById(id);
       animationDuration &&
         animatedCard &&
         animatedCard.style.setProperty(
@@ -48,12 +50,10 @@ const withAnimatedBorderCard =
       backgroundColor &&
         animatedCard &&
         animatedCard.style.setProperty("--backgroundColor", backgroundColor);
-
-      console.log(animatedCard);
     }, []);
 
     return (
-      <div className="animated__border" id="animated-card">
+      <div className="animated__border" id={id}>
         <WrappedComponent {...(props as P)}>{children}</WrappedComponent>
       </div>
     );
