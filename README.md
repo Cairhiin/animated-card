@@ -1,5 +1,5 @@
 # Animated Border HoC
-A card component with animated border for React
+A higher order component with animated border for React. Simply wrap your component you want to add have an animated border.
 
 ## Installation instructions
 git clone https://github.com/Cairhiin/animated-card.git
