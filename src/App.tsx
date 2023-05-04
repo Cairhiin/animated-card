@@ -51,7 +51,7 @@ function App() {
           </pre>
         </AnimatedCard>
         <AnimatedCard
-          header="Animated Border with custom animation duration and border width"
+          header="Animated Border with custom background"
           id="example4"
           backgroundColor="hsl(222, 47%, 11%)"
         >
@@ -60,7 +60,6 @@ function App() {
             backgroundColor=
             <br />
             &nbsp;&nbsp;"hsl(222, 47%, 11%)" <br />
-            borderRadius="10px"
           </pre>
         </AnimatedCard>
       </div>
