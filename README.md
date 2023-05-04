@@ -30,3 +30,8 @@ default: "#111"
 
 borderWith: string
 default: "1px"```
+
+## TODO
+- Add support for customizable border radius (requires changing border-image as it is always square)
+- Add support for customizable boxshadow
+- Add a non TS version
