@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import "./style.css";
 
 /*
@@ -30,31 +30,34 @@ const withAnimatedBorder =
       backgroundColor,
       id,
     } = props;
+    const elementRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-      const animatedCard = document.getElementById(id);
       animationDuration &&
-        animatedCard &&
-        animatedCard.style.setProperty(
+        elementRef.current &&
+        elementRef.current.style.setProperty(
           "--animationDuration",
-          animationDuration
+          animationDuration || "5s"
         );
       borderColor1 &&
-        animatedCard &&
-        animatedCard.style.setProperty("--borderColor1", borderColor1);
+        elementRef.current &&
+        elementRef.current.style.setProperty("--borderColor1", borderColor1);
       borderColor2 &&
-        animatedCard &&
-        animatedCard.style.setProperty("--borderColor2", borderColor2);
+        elementRef.current &&
+        elementRef.current.style.setProperty("--borderColor2", borderColor2);
       borderWidth &&
-        animatedCard &&
-        animatedCard.style.setProperty("--borderWidth", borderWidth);
+        elementRef.current &&
+        elementRef.current.style.setProperty("--borderWidth", borderWidth);
       backgroundColor &&
-        animatedCard &&
-        animatedCard.style.setProperty("--backgroundColor", backgroundColor);
+        elementRef.current &&
+        elementRef.current.style.setProperty(
+          "--backgroundColor",
+          backgroundColor
+        );
     }, []);
 
     return (
-      <div className="animated__border" id={id}>
+      <div className="animated__border" id={id} ref={elementRef}>
         <WrappedComponent {...(props as P)}>{children}</WrappedComponent>
       </div>
     );
